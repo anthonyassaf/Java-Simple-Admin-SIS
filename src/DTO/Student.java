@@ -4,7 +4,7 @@ package DTO;
  *
  * @author anthony
  */
-public class Student {
+public class Student implements IDTO {
     private int id;
     private String firstname;
     private String lastname;
@@ -35,6 +35,14 @@ public class Student {
     
     public void setFirstname(String firstname){
         this.firstname = firstname;
+    }
+    
+    public String getLastname(){
+        return this.lastname;
+    }
+    
+    public void setLastname(String lastname){
+        this.lastname = lastname;
     }
     
     public String getEmail(){

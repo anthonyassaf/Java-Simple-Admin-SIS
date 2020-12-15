@@ -17,7 +17,7 @@ public class StudentManager {
         repoStudent = new RepoStudent();
     }
     
-    public ArrayList<IDTO> getAllUsers(){
+    public ArrayList<IDTO> getAllStudents(){
 	return repoStudent.getAll();
     }
  

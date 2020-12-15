@@ -1,6 +1,9 @@
 package PL;
 
 
+import java.net.UnknownHostException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /*
@@ -101,13 +104,17 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_addStudentButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        EditStudentsFrame esf = new EditStudentsFrame();
-        esf.setVisible(true);
-        esf.pack();
-        esf.setLocationRelativeTo(null);
-        esf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            EditStudentsFrame esf = new EditStudentsFrame();
+            esf.setVisible(true);
+            esf.pack();
+            esf.setLocationRelativeTo(null);
+            esf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            this.dispose();
+        } catch (UnknownHostException ex) {
+            Logger.getLogger(HomeFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

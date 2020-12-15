@@ -23,21 +23,21 @@ public class RepoStudent {
     }
     
     public ArrayList<IDTO> getAll() {
-        ArrayList<IDTO> listOfStudents = new ArrayList<IDTO>();
-        DBCollection collection = db.getCollection("HomeComponents");
+        ArrayList<IDTO> students = new ArrayList<IDTO>();
+        DBCollection collection = db.getCollection("student");
         DBCursor cursor = collection.find();
 
         for (DBObject c : cursor) {
-            listOfStudents.add(extractUserFromCollection(c));
+            students.add(extractUserFromCollection(c));
         }
         
-        return listOfStudents;
+        return students;
     }
     
     public Student extractUserFromCollection(DBObject c){
         Student student = new Student();
         student.setId((int) c.get("studentId"));
-        student.setFirstname((String) c.get("firsname"));
+        student.setFirstname((String) c.get("firstname"));
         student.setLastname((String) c.get("lastname"));
         student.setEmail((String) c.get("email"));
         
