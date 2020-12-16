@@ -23,7 +23,7 @@ public class RepoStudent {
     }
     
     public ArrayList<IDTO> getAll() {
-        ArrayList<IDTO> students = new ArrayList<IDTO>();
+        ArrayList<IDTO> students = new ArrayList<>();
         DBCollection collection = db.getCollection("student");
         DBCursor cursor = collection.find();
 
