@@ -62,7 +62,7 @@ public class EditStudentsFrame extends javax.swing.JFrame {
         fnameTF = new javax.swing.JTextField();
         lnameTF = new javax.swing.JTextField();
         emailTF = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
@@ -90,9 +90,14 @@ public class EditStudentsFrame extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("ID :");
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Update");
+        updateButton.setBackground(new java.awt.Color(0, 204, 0));
+        updateButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateButton.setText("Update");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
 
         jButton2.setBackground(new java.awt.Color(255, 51, 51));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,7 +153,7 @@ public class EditStudentsFrame extends javax.swing.JFrame {
                                     .addComponent(lnameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(14, 14, 14))))
@@ -198,7 +203,7 @@ public class EditStudentsFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47))))
         );
 
@@ -243,6 +248,24 @@ public class EditStudentsFrame extends javax.swing.JFrame {
             setTextFields(id, firstname, lastname, email);
         }
     }//GEN-LAST:event_previewButtonActionPerformed
+
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+
+        String id = idTF.getText();
+        String firstname = fnameTF.getText();
+        String lastname = lnameTF.getText();
+        String email = emailTF.getText();
+        
+        boolean isUpdated  = studentManager.update(Integer.parseInt(id), firstname, lastname, email);
+        
+        if(isUpdated){
+            JOptionPane.showMessageDialog(null, "Successfully Updated.", "information", JOptionPane.INFORMATION_MESSAGE);
+            fillJtable();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Error.", "Alert", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_updateButtonActionPerformed
 
     public void setTextFields(int id, String firstname, String lastname, String email){
         idTF.setText(Integer.toString(id));
@@ -295,7 +318,6 @@ public class EditStudentsFrame extends javax.swing.JFrame {
     private javax.swing.JTextField emailTF;
     private javax.swing.JTextField fnameTF;
     private javax.swing.JTextField idTF;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -307,5 +329,6 @@ public class EditStudentsFrame extends javax.swing.JFrame {
     private javax.swing.JTextField lnameTF;
     private javax.swing.JButton previewButton;
     private javax.swing.JTable table;
+    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 }

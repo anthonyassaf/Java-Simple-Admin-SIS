@@ -26,4 +26,8 @@ public class StudentManager {
         return repoStudent.create(new Student(id, firstname, lastname, email));
     }
     
+    public boolean update(int id, String firstname, String lastname, String email){
+        return repoStudent.update(new Student(id, firstname, lastname, email));
+    }
+    
 }

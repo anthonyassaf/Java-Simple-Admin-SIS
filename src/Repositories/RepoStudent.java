@@ -4,10 +4,12 @@ import DTO.IDTO;
 import DTO.Student;
 import Helpers.ConnectionManager;
 import com.mongodb.BasicDBObject;
+import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+import com.mongodb.QueryBuilder;
 import com.mongodb.WriteResult;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -54,7 +56,19 @@ public class RepoStudent implements IRepo{
 
     @Override
     public boolean update(IDTO dto) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Student student = (Student) dto;
+        DBCollection collection = db.getCollection("student");
+        DBObject query = QueryBuilder.start("studentId").is(student.getId()).get();
+        
+        DBObject update = BasicDBObjectBuilder.start()
+                .add("studentId", student.getId())
+                .add("firstname", student.getFirstname())
+                .add("lastname", student.getLastname())
+                .add("email", student.getEmail()).get();
+        
+       WriteResult writeResult = collection.update(query, update);
+       
+       return writeResult.getN() > 0;
     }
 
     @Override
