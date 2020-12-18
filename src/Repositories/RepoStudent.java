@@ -9,9 +9,11 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-
+import org.bson.Document;
 import org.bson.types.ObjectId;
-
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 /**
  *
  * @author anthony
@@ -46,16 +48,17 @@ public class RepoStudent {
         return student;
     }
     
+    /*
     public boolean insertStudent(IDTO dto){
         Student student = (Student) dto;
-        DBCollection collection = db.getCollection("student");
-        /*Document document = new Document();
+        MongoCollection<Document> gradesCollection = db.getCollection("grades");
+        Document document = new Document("_id", new ObjectId());
         document.append("id", student.getId());
         document.append("firsntame", student.getFirstname());
         document.append("lastname", student.getLastname());
         document.append("email", student.getEmail());
         //Inserting the document into the collection
-        db.getCollection("students").insertOne(document);*/
+        collection.insertOne(document);
         return true;
     }
     
@@ -68,6 +71,6 @@ public class RepoStudent {
         Student student = (Student) dto;
         return true;
     }
-    
+    */
     
 }
