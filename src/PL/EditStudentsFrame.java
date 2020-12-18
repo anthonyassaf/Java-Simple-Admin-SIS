@@ -21,6 +21,10 @@ public class EditStudentsFrame extends javax.swing.JFrame {
     private StudentManager studentManager;
     private DefaultTableModel model;
     private TableModel tableModel;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 7251d2a1f5b30c6d5efea1a71cadcb80b1c248e7
     /**
      * Creates new form editStudentsFrame
      */
@@ -69,10 +73,17 @@ public class EditStudentsFrame extends javax.swing.JFrame {
         lnameTF = new javax.swing.JTextField();
         emailTF = new javax.swing.JTextField();
         updateButton = new javax.swing.JButton();
+<<<<<<< HEAD
         deleteButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
         backButton = new javax.swing.JButton();
+=======
+        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
+>>>>>>> 7251d2a1f5b30c6d5efea1a71cadcb80b1c248e7
         previewButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -96,9 +107,20 @@ public class EditStudentsFrame extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("ID :");
 
+<<<<<<< HEAD
         updateButton.setBackground(new java.awt.Color(0, 153, 0));
         updateButton.setForeground(new java.awt.Color(255, 255, 255));
         updateButton.setText("Update");
+=======
+        updateButton.setBackground(new java.awt.Color(0, 204, 0));
+        updateButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateButton.setText("Update");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
+>>>>>>> 7251d2a1f5b30c6d5efea1a71cadcb80b1c248e7
 
         deleteButton.setBackground(new java.awt.Color(255, 51, 51));
         deleteButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,6 +146,15 @@ public class EditStudentsFrame extends javax.swing.JFrame {
         });
 
         previewButton.setBackground(new java.awt.Color(255, 102, 0));
+        previewButton.setForeground(new java.awt.Color(255, 255, 255));
+        previewButton.setText("Preview");
+        previewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                previewButtonActionPerformed(evt);
+            }
+        });
+
+        previewButton.setBackground(new java.awt.Color(204, 102, 0));
         previewButton.setForeground(new java.awt.Color(255, 255, 255));
         previewButton.setText("Preview");
         previewButton.addActionListener(new java.awt.event.ActionListener() {
@@ -160,12 +191,17 @@ public class EditStudentsFrame extends javax.swing.JFrame {
                                 .addGap(14, 14, 14))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
+<<<<<<< HEAD
                         .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+=======
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+>>>>>>> 7251d2a1f5b30c6d5efea1a71cadcb80b1c248e7
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
                         .addContainerGap())
+<<<<<<< HEAD
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(previewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,6 +210,22 @@ public class EditStudentsFrame extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+=======
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(275, 275, 275)
+                        .addComponent(previewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(previewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+>>>>>>> 7251d2a1f5b30c6d5efea1a71cadcb80b1c248e7
                 .addGap(8, 8, 8)
                 .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -195,6 +247,7 @@ public class EditStudentsFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,6 +259,13 @@ public class EditStudentsFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(previewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47))))
+>>>>>>> 7251d2a1f5b30c6d5efea1a71cadcb80b1c248e7
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -250,6 +310,47 @@ public class EditStudentsFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_previewButtonActionPerformed
 
+    private void previewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previewButtonActionPerformed
+        // TODO add your handling code here:
+        tableModel = table.getModel();
+       
+        if (table.getSelectedRow() < 0) {
+            JOptionPane.showMessageDialog(null, "You must select a row.", "Alert", JOptionPane.WARNING_MESSAGE);
+        } else {
+            int index = table.getSelectedRow();
+            int id = (int) tableModel.getValueAt(index, 0);
+            String firstname = (String) tableModel.getValueAt(index, 1);
+            String lastname = (String) tableModel.getValueAt(index, 2);
+            String email = (String) tableModel.getValueAt(index, 3);
+            setTextFields(id, firstname, lastname, email);
+        }
+    }//GEN-LAST:event_previewButtonActionPerformed
+
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+
+        String id = idTF.getText();
+        String firstname = fnameTF.getText();
+        String lastname = lnameTF.getText();
+        String email = emailTF.getText();
+        
+        boolean isUpdated  = studentManager.update(Integer.parseInt(id), firstname, lastname, email);
+        
+        if(isUpdated){
+            JOptionPane.showMessageDialog(null, "Successfully Updated.", "information", JOptionPane.INFORMATION_MESSAGE);
+            fillJtable();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Error.", "Alert", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_updateButtonActionPerformed
+
+    public void setTextFields(int id, String firstname, String lastname, String email){
+        idTF.setText(Integer.toString(id));
+        fnameTF.setText(firstname);
+        lnameTF.setText(lastname);
+        emailTF.setText(email);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -291,11 +392,19 @@ public class EditStudentsFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JButton backButton;
     private javax.swing.JButton deleteButton;
     private javax.swing.JTextField emailTF;
     private javax.swing.JTextField fnameTF;
     private javax.swing.JTextField idTF;
+=======
+    private javax.swing.JTextField emailTF;
+    private javax.swing.JTextField fnameTF;
+    private javax.swing.JTextField idTF;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+>>>>>>> 7251d2a1f5b30c6d5efea1a71cadcb80b1c248e7
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
